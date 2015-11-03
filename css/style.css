@@ -673,11 +673,11 @@ a {
   border: 1px solid #06c611;
 }
 #header .header-nav .social a.hupu {
-  background: url("/img/hupu.png") center no-repeat #7d7d7d;
-  border: 1px solid #7d7d7d;
+  background: url("/img/hupu.png") center no-repeat #b7b7b7;
+  border: 1px solid #b7b7b7;
 }
 #header .header-nav .social a.hupu:hover {
-  border: 1px solid #7d7d7d;
+  border: 1px solid #b7b7b7;
 }
 #header .header-nav .social a.mail {
   background: url("/img/mail.png") center no-repeat #005a87;
