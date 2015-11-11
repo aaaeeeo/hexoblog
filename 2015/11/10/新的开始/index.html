@@ -5,8 +5,7 @@
   
   <title>Algorithm Week 12 | LOSO&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##Review: DFS
-
+  <meta name="description" content="Review: DFS
 input: G=(V,E), Directed or Undirected, in ADJ list format
 output: 
 d[v]: discovery time
@@ -14,14 +13,14 @@ f[v]:finishing time
 p[v]:parebt of v on DFS tree
 
 
-time: O(V+E)####Undirected Graphs: 
-tree edge">
+time: O(V+E)Undirected Graphs:
+tree edges
+nontre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorithm Week 12">
 <meta property="og:url" content="http://yoursite.com/2015/11/10/新的开始/index.html">
 <meta property="og:site_name" content="LOSO's blog">
-<meta property="og:description" content="##Review: DFS
-
+<meta property="og:description" content="Review: DFS
 input: G=(V,E), Directed or Undirected, in ADJ list format
 output: 
 d[v]: discovery time
@@ -29,13 +28,13 @@ f[v]:finishing time
 p[v]:parebt of v on DFS tree
 
 
-time: O(V+E)####Undirected Graphs: 
-tree edge">
-<meta property="og:updated_time" content="2015-11-11T03:28:43.000Z">
+time: O(V+E)Undirected Graphs:
+tree edges
+nontre">
+<meta property="og:updated_time" content="2015-11-11T03:31:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm Week 12">
-<meta name="twitter:description" content="##Review: DFS
-
+<meta name="twitter:description" content="Review: DFS
 input: G=(V,E), Directed or Undirected, in ADJ list format
 output: 
 d[v]: discovery time
@@ -43,8 +42,9 @@ f[v]:finishing time
 p[v]:parebt of v on DFS tree
 
 
-time: O(V+E)####Undirected Graphs: 
-tree edge">
+time: O(V+E)Undirected Graphs:
+tree edges
+nontre">
   
     <link rel="alternative" href="/atom.xml" title="LOSO&#39;s blog" type="application/atom+xml">
   
@@ -290,8 +290,7 @@ tree edge">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Review: DFS</p>
-<ul>
+        <h2 id="Review:_DFS">Review: DFS</h2><ul>
 <li>input: G=(V,E), Directed or Undirected, in ADJ list format</li>
 <li>output: <ul>
 <li>d[v]: discovery time</li>
@@ -299,9 +298,9 @@ tree edge">
 <li>p[v]:parebt of v on DFS tree</li>
 </ul>
 </li>
-<li>time: O(V+E)<br>####Undirected Graphs: </li>
+<li>time: O(V+E)<h4 id="Undirected_Graphs:">Undirected Graphs:</h4></li>
 <li>tree edges</li>
-<li>nontree edges (back edge)<br>####Directed Graphs<br>4 typtes of edge S :</li>
+<li>nontree edges (back edge)<h4 id="Directed_Graphs">Directed Graphs</h4>4 typtes of edge S :</li>
 </ul>
 <ol>
 <li>Tree/forward Edge :  <code>d[u]&lt;d[v]&lt;f[v]&lt;f[u]</code></li>
@@ -309,8 +308,7 @@ tree edge">
 <li>Cross Edge : <code>d[v]&lt;f[v]&lt;d[u]&lt;f[u]</code></li>
 </ol>
 <p>For tree, forward and cross edge (u,v):<br><code>f[v]&lt;f[u]      [^*]</code><br>For back edge (u,v):<br><code>f[u]&lt;f[v]      (**)</code><br>So, back edges go from lower to higher finishing times f<br>can detect back edge and derermine if exists cycle in graph by compareing f times</p>
-<p>##Directed Acyclic Graphs (DAG)</p>
-<ul>
+<h2 id="Directed_Acyclic_Graphs_(DAG)">Directed Acyclic Graphs (DAG)</h2><ul>
 <li>DEF: let G=(V,E) be a directed graph H, G is acyclic if it contains no (directed) cycles.</li>
 <li>Applicaton: <strong>Topological Sort</strong>  <h4 id="Topological_Sort">Topological Sort</h4></li>
 <li><strong>Given</strong>: A Directed Acyclic Graph G=(V,E)</li>
@@ -319,22 +317,20 @@ tree edge">
 </ul>
 <p><strong>TOPOLOGICAL-SORT(G)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">L</span> = empty <span class="keyword">list</span>                              <span class="comment">//O(V)</span></span><br><span class="line">DFS(<span class="keyword">G</span>) to compute f[v] <span class="keyword">for</span> all v <span class="keyword">in</span> <span class="keyword">G</span>       <span class="comment">//O(V+E)</span></span><br><span class="line">when vertex is finished, add it to <span class="keyword">L</span>        </span><br><span class="line">reverse <span class="keyword">list</span> <span class="keyword">L</span>                              <span class="comment">//O(V)</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>TIME:O(V+E)</strong></p>
-<p>####Correctness<br>NTS: if (u,v) belong to E, then f[v]&lt;f[u]  </p>
+<h4 id="Correctness">Correctness</h4><p>NTS: if (u,v) belong to E, then f[v]&lt;f[u]  </p>
 <p><strong>proof:</strong> </p>
 <blockquote>
 <p>when explore (u,v) what are the color of u and v?<br>Is v gray white or black?</p>
 </blockquote>
-<p>####Source Vertex</p>
-<ul>
-<li>vertex with no incoming edges<br>####Sink Vertex</li>
+<h4 id="Source_Vertex">Source Vertex</h4><ul>
+<li>vertex with no incoming edges<h4 id="Sink_Vertex">Sink Vertex</h4></li>
 <li>vertex with no outcoming edges</li>
 </ul>
 <p><strong>1st vertex in topological ordering is source and last is sink</strong></p>
-<p>##Strongly Connected Components</p>
-<ul>
+<h2 id="Strongly_Connected_Components">Strongly Connected Components</h2><ul>
 <li>DEF: two vertices <em>u</em> and <em>v</em> of a directed graph <em>G</em> are strongly connected if there is a path from <em>u</em> to <em>v</em> and a path from <em>v</em> to <em>u</em></li>
 <li>Partitions <em>V</em> in to disjoint sets of vertices called <strong>Strongly Connected Components(SCC)</strong></li>
-<li>A SCC is a maximal set of strongly connected vertices<br>####Clever (Tarjan): ideas</li>
+<li>A SCC is a maximal set of strongly connected vertices<h4 id="Clever_(Tarjan):_ideas">Clever (Tarjan): ideas</h4></li>
 </ul>
 <ol>
 <li>consider transpose of G=(V,E): $G^T=(V,E^T)$ where $E^T={(v,u): (u,v) \in E}$<br><strong>observation:</strong> G and $G^T$ have the same SCCs</li>
@@ -346,23 +342,19 @@ tree edge">
 <blockquote>
 <p>let X and X’ be distinct SCCs in G<br>let $u,v \in X$, $u’,v’ \in X’$, and suppose there is a path from u to u’ in G, then there cannot be a path from v’ to v in G</p>
 </blockquote>
-<p>####How do we find a vertex in a sink SCC?</p>
-<ul>
+<h4 id="How_do_we_find_a_vertex_in_a_sink_SCC?">How do we find a vertex in a sink SCC?</h4><ul>
 <li>The vertex with highest finishing time in a DFS of a directed G is in a scource SCC.</li>
 <li>NOTE: The vertex with lowest finishing time might not be in a sink </li>
 <li>Take $G^T$, a source in G is a sink in $G^T$ and a sink in G is a source in $G^T$</li>
 </ul>
 <p><strong>SCC(G)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">construct G^T</span><br><span class="line"><span class="function"><span class="title">DFS</span><span class="params">(G)</span></span> to compute f[u] <span class="keyword">for</span> all u <span class="keyword">in</span> V       <span class="comment">//O(V+E)</span></span><br><span class="line"><span class="function"><span class="title">DFS</span><span class="params">(G^T)</span></span> using reverse finishing <span class="attribute">order</span> of vertices <span class="keyword">in</span> <span class="function"><span class="title">DFS</span><span class="params">(G)</span></span>    <span class="comment">//O(V+E)</span></span><br><span class="line">output DFS trees from <span class="function"><span class="title">DFS</span><span class="params">(G^T)</span></span>  <span class="comment">//each tree in dfs forest is a SCC of G //O(V)</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>TIME: O(V+E)</strong></p>
-<p>##Shortest Path</p>
-<p>####Weighted Directed Graphs</p>
-<ul>
+<h2 id="Shortest_Path">Shortest Path</h2><h4 id="Weighted_Directed_Graphs">Weighted Directed Graphs</h4><ul>
 <li>A weighted graph H is a directed together with a weight function<br>$G=(V,E,w)$</li>
 <li>shortest path from u to v is a path of minimum weight from u to v</li>
-<li>shortest path weight from u to v:<br>$\delta$(u,v)=min{ w(P) : P from u to v }<br>####When do shortest paths not exist?<br>Negative edge weights<br>Negative weight cycle:<br>$\delta$(u,v) = $-\infty$<br>if not reachable, $\delta$(u,v) = $+\infty$</li>
+<li>shortest path weight from u to v:<br>$\delta$(u,v)=min{ w(P) : P from u to v }<h4 id="When_do_shortest_paths_not_exist?">When do shortest paths not exist?</h4>Negative edge weights<br>Negative weight cycle:<br>$\delta$(u,v) = $-\infty$<br>if not reachable, $\delta$(u,v) = $+\infty$</li>
 </ul>
-<p>###Dijkstra’s Algorithm</p>
-<ul>
+<h3 id="Dijkstra’s_Algorithm">Dijkstra’s Algorithm</h3><ul>
 <li>input: ( G, w, S)<ul>
 <li>G=(V,E) Directed, ADJ </li>
 <li>Weight function: w: E-&gt;R ( $\forall e \in E$ )( w(e)&gt;=0 )</li>
@@ -378,8 +370,7 @@ tree edge">
 <p><strong>DIJKSTRA(G, w, s)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">INITILIZE-SINGLE-SOURCE(<span class="keyword">G</span>,s)</span><br><span class="line">S = empty</span><br><span class="line">Q = V                  <span class="comment">//keyed by d[v]</span></span><br><span class="line"><span class="keyword">while</span> Q != empty</span><br><span class="line">    <span class="keyword">u</span> = EXTRACT-<span class="literal">MIN</span>(Q)</span><br><span class="line">    S = S join &#123;<span class="keyword">u</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> each vertex v <span class="keyword">in</span> Adj[<span class="keyword">u</span>]</span><br><span class="line">        RELAX(<span class="keyword">u</span>, v, w)</span><br></pre></td></tr></table></figure></p>
 <p><strong>INITILIZE-SINGLE-SOURCE(G, s)</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> vertex v <span class="operator">in</span> V</span><br><span class="line">    d[v] = infinity</span><br><span class="line">    <span class="constant">pi</span>[v] = NIL</span><br><span class="line">d[s]=<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>RELAX(u, v, w)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">d</span>[v] &gt; <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    <span class="keyword">d</span>[v] = <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    pi[v] = <span class="keyword">u</span></span><br></pre></td></tr></table></figure></p>
-<p>#####correctness</p>
-<ul>
+<h5 id="correctness">correctness</h5><ul>
 <li>NTS: d[v]=$\delta$(s,v) when alg terminates</li>
 <li>LEMMA: when u is delected from Q and added to S, d[v]=$\delta$(s,v)</li>
 <li>proof:<blockquote>
@@ -387,7 +378,7 @@ tree edge">
 </blockquote>
 </li>
 </ul>
-<p>####Time analysis<br>Q: priority queue<br>|V| <em> cost of insert + |V| </em> cost of extract-min + O(E) * cost of decrease-key</p>
+<h4 id="Time_analysis">Time analysis</h4><p>Q: priority queue<br>|V| <em> cost of insert + |V| </em> cost of extract-min + O(E) * cost of decrease-key</p>
 <ol>
 <li><p>array for Q<br>cost of insert: O(1)<br>cost of extract-min: V-1<br>cost of decrease-key: O(1)<br><strong>overall: $O(V^2)$</strong></p>
 </li>
