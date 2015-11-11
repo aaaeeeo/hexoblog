@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-11T03:57:47.000Z</updated>
+  <updated>2015-11-11T04:42:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/11/10/55001-12/"/>
     <id>http://yoursite.com/2015/11/10/55001-12/</id>
     <published>2015-11-11T03:00:12.000Z</published>
-    <updated>2015-11-11T03:57:47.000Z</updated>
+    <updated>2015-11-11T04:42:53.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Review:_DFS">Review: DFS</h2><ul>
 <li>input: G=(V,E), Directed or Undirected, in ADJ list format</li>
 <li>output: <ul>
@@ -37,13 +37,14 @@
 <li>Back Edge : <code>d[v]&lt;d[u]&lt;f[u]&lt;f[v]</code></li>
 <li>Cross Edge : <code>d[v]&lt;f[v]&lt;d[u]&lt;f[u]</code></li>
 </ol>
-<p>For tree, forward and cross edge (u,v):<br><code>f[v]&lt;f[u]      [^*]</code><br>For back edge (u,v):<br><code>f[u]&lt;f[v]      (**)</code><br>So, back edges go from lower to higher finishing times f<br>can detect back edge and derermine if exists cycle in graph by compareing f times</p>
+<p>For tree, forward and cross edge (u,v):<br><code>f[v]&lt;f[u]      (\*)
+For back edge (u,v):</code>f[u]&lt;f[v]      (**)`<br>So, back edges go from lower to higher finishing times f<br>can detect back edge and derermine if exists cycle in graph by compareing f times</p>
 <h2 id="Directed_Acyclic_Graphs_(DAG)">Directed Acyclic Graphs (DAG)</h2><ul>
 <li>DEF: let G=(V,E) be a directed graph H, G is acyclic if it contains no (directed) cycles.</li>
 <li>Applicaton: <strong>Topological Sort</strong>  <h4 id="Topological_Sort">Topological Sort</h4></li>
 <li><strong>Given</strong>: A Directed Acyclic Graph G=(V,E)</li>
 <li><strong>Output</strong>: A list of G’s vertices $v_1,v_2,..,v_n$ such that all edges go from left to right<br>V = Set of tasks,  edge(u,v) means “do u before v”</li>
-<li>no cycles, all edges have decreasing (high to low) finishing #’s by (<em>)<br>order vertices by decreasing finishinf time </em>f*</li>
+<li>no cycles, all edges have decreasing (high to low) finishing #’s by (*)<br>order vertices by decreasing finishinf time <em>f</em></li>
 </ul>
 <p><strong>TOPOLOGICAL-SORT(G)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">L</span> = empty <span class="keyword">list</span>                              <span class="comment">//O(V)</span></span><br><span class="line">DFS(<span class="keyword">G</span>) to compute f[v] <span class="keyword">for</span> all v <span class="keyword">in</span> <span class="keyword">G</span>       <span class="comment">//O(V+E)</span></span><br><span class="line">when vertex is finished, add it to <span class="keyword">L</span>        </span><br><span class="line">reverse <span class="keyword">list</span> <span class="keyword">L</span>                              <span class="comment">//O(V)</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>TIME:O(V+E)</strong></p>
