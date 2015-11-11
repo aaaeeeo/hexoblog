@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-11T03:31:17.000Z</updated>
+  <updated>2015-11-11T03:54:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/11/10/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
     <id>http://yoursite.com/2015/11/10/新的开始/</id>
     <published>2015-11-11T03:00:12.000Z</published>
-    <updated>2015-11-11T03:31:17.000Z</updated>
+    <updated>2015-11-11T03:54:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Review:_DFS">Review: DFS</h2><ul>
 <li>input: G=(V,E), Directed or Undirected, in ADJ list format</li>
 <li>output: <ul>
@@ -115,6 +115,7 @@
 <li><p>Binary Heap for Q<br>stored as an array<br>cost of insert: O(lgV)<br>cost of extract-min: O(lgV)<br>cost of decrease-key: O(lgV)<br><strong>overall: $O( (V+E)lgV )$</strong></p>
 </li>
 </ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Start:&#62;http://www.google.com[blank]&#10;e=&#62;end:&#62;http://www.google.com&#10;op1=&#62;operation: My Operation&#10;sub1=&#62;subroutine: My Subroutine&#10;cond=&#62;condition: Yes&#10;or No?:&#62;http://www.google.com&#10;io=&#62;inputoutput: catch something...&#10;&#10;st-&#62;op1-&#62;cond&#10;cond(yes)-&#62;io-&#62;e&#10;cond(no)-&#62;sub1(right)-&#62;op1</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="Review:_DFS">Review: DFS</h2><ul>
