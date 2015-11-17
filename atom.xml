@@ -39,7 +39,7 @@
     <link href="http://yoursite.com/2015/11/16/51100-13/"/>
     <id>http://yoursite.com/2015/11/16/51100-13/</id>
     <published>2015-11-17T03:00:00.000Z</published>
-    <updated>2015-11-17T22:43:24.000Z</updated>
+    <updated>2015-11-17T22:44:06.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Union_Find">Union Find</h2><p>ppt</p>
 <h2 id="Propability">Propability</h2><h3 id="Sample_space_and_Events">Sample space and Events</h3><ul>
 <li>let S = { all possible ordings 1…7 }<br>S:”Sample Space”</li>
@@ -62,7 +62,7 @@
 <li>The PDF is defined as the dervative of the distribution function<br>$$ P(x)=\left.\frac{dP(x)}{dx}\right.$$</li>
 <li>For a discrete sample space $P(x_i)$ is intepreted as $P(x_i)=P(\mathbb{X}=x_i)$<br><a href="https://en.wikipedia.org/wiki/Error_function" target="_blank" rel="external"><strong><em>Error function</em></strong></a><br><a href="https://en.wikipedia.org/wiki/Mexican_hat_wavelet" target="_blank" rel="external"><strong><em>Mexican hat wavelet</em></strong></a></li>
 </ul>
-<h4 id="PDF_for_continues_random_variable">PDF for continues random variable</h4><p>$$ P(x \in C)= \int<em>C P(x)dx $$<br>$$ P(a-\frac c2&lt;=x&lt;=a+\frac c2)=\int</em>{a-\frac c2}^{a+\frac c2} P(x)dx$$<br>$$ \int_{-\infty}^{\infty} P(x)dx=1$$<br>$$ P(x)&gt;=0\,\,\, \forall x$$</p>
+<h4 id="PDF_for_continues_random_variable">PDF for continues random variable</h4><p>$$P(x \in C)= \int<em>C P(x)dx$$<br>$$ P(a-\frac c2&lt;=x&lt;=a+\frac c2)=\int</em>{a-\frac c2}^{a+\frac c2} P(x)dx$$<br>$$ \int_{-\infty}^{\infty} P(x)dx=1$$<br>$$ P(x)&gt;=0\,\,\, \forall x$$</p>
 <h3 id="Expectation">Expectation</h3><p>The <strong>expected</strong> value of a random variable E[x] is defined as</p>
 <ul>
 <li>discrete: $E[x]=\sum_i x_iP(x_i)$ where P(x) is the discrete PDF of x</li>
