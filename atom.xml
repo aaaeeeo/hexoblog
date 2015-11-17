@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-17T21:05:16.000Z</updated>
+  <updated>2015-11-17T22:41:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Senegal Sojourn]]></title>
+    <link href="http://yoursite.com/2015/11/17/SS1/"/>
+    <id>http://yoursite.com/2015/11/17/SS1/</id>
+    <published>2015-11-17T23:00:00.000Z</published>
+    <updated>2015-11-17T22:41:38.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https://books.google.com/books?id=zSx_MdBEIRoC" target="_blank" rel="external">Google Books</a><br><a href="http://www.amazon.com/Senegal-Sojourn-Selections-Teachers-Journal/dp/0739134620" target="_blank" rel="external">Amazon</a></p>
+<h2 id="Poem">Poem</h2><p>Baobab tree<br>猴面包树<br><a href="https://en.wikipedia.org/wiki/Adansonia" target="_blank" rel="external">Adansonia</a></p>
+<h2 id="Chapter_1">Chapter 1</h2><p>Short film: <a href="http://www.imdb.com/title/tt0282371/" target="_blank" rel="external"><strong><em>Baobab</em></strong></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https]]>
+    </summary>
+    
+      <category term="africa" scheme="http://yoursite.com/tags/africa/"/>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Advanced Programming Week 13]]></title>
-    <link href="http://yoursite.com/2015/11/17/51100-13/"/>
-    <id>http://yoursite.com/2015/11/17/51100-13/</id>
-    <published>2015-11-18T03:00:00.000Z</published>
-    <updated>2015-11-17T21:05:16.000Z</updated>
+    <link href="http://yoursite.com/2015/11/16/51100-13/"/>
+    <id>http://yoursite.com/2015/11/16/51100-13/</id>
+    <published>2015-11-17T03:00:00.000Z</published>
+    <updated>2015-11-17T22:43:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Union_Find">Union Find</h2><p>ppt</p>
 <h2 id="Propability">Propability</h2><h3 id="Sample_space_and_Events">Sample space and Events</h3><ul>
 <li>let S = { all possible ordings 1…7 }<br>S:”Sample Space”</li>
@@ -42,7 +62,7 @@
 <li>The PDF is defined as the dervative of the distribution function<br>$$ P(x)=\left.\frac{dP(x)}{dx}\right.$$</li>
 <li>For a discrete sample space $P(x_i)$ is intepreted as $P(x_i)=P(\mathbb{X}=x_i)$<br><a href="https://en.wikipedia.org/wiki/Error_function" target="_blank" rel="external"><strong><em>Error function</em></strong></a><br><a href="https://en.wikipedia.org/wiki/Mexican_hat_wavelet" target="_blank" rel="external"><strong><em>Mexican hat wavelet</em></strong></a></li>
 </ul>
-<h4 id="PDF_for_continues_random_variable">PDF for continues random variable</h4><p>$$P(x\in C)=\int<em>C P(x)dx$$<br>$$P(a-\frac c2&lt;=x&lt;=a+\frac c2)=\int</em>{a-\frac c2}^{a+\frac c2} P(x)dx$$<br>$$\int_{-\infty}^{\infty} P(x)dx=1$$<br>$$P(x)&gt;=0\,\,\, \forall x$$</p>
+<h4 id="PDF_for_continues_random_variable">PDF for continues random variable</h4><p>$$ P(x \in C)= \int<em>C P(x)dx $$<br>$$ P(a-\frac c2&lt;=x&lt;=a+\frac c2)=\int</em>{a-\frac c2}^{a+\frac c2} P(x)dx$$<br>$$ \int_{-\infty}^{\infty} P(x)dx=1$$<br>$$ P(x)&gt;=0\,\,\, \forall x$$</p>
 <h3 id="Expectation">Expectation</h3><p>The <strong>expected</strong> value of a random variable E[x] is defined as</p>
 <ul>
 <li>discrete: $E[x]=\sum_i x_iP(x_i)$ where P(x) is the discrete PDF of x</li>
@@ -62,26 +82,6 @@
       <category term="english" scheme="http://yoursite.com/tags/english/"/>
     
       <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Senegal Sojourn]]></title>
-    <link href="http://yoursite.com/2015/11/17/SS1/"/>
-    <id>http://yoursite.com/2015/11/17/SS1/</id>
-    <published>2015-11-17T23:00:00.000Z</published>
-    <updated>2015-11-17T22:41:38.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https://books.google.com/books?id=zSx_MdBEIRoC" target="_blank" rel="external">Google Books</a><br><a href="http://www.amazon.com/Senegal-Sojourn-Selections-Teachers-Journal/dp/0739134620" target="_blank" rel="external">Amazon</a></p>
-<h2 id="Poem">Poem</h2><p>Baobab tree<br>猴面包树<br><a href="https://en.wikipedia.org/wiki/Adansonia" target="_blank" rel="external">Adansonia</a></p>
-<h2 id="Chapter_1">Chapter 1</h2><p>Short film: <a href="http://www.imdb.com/title/tt0282371/" target="_blank" rel="external"><strong><em>Baobab</em></strong></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https]]>
-    </summary>
-    
-      <category term="africa" scheme="http://yoursite.com/tags/africa/"/>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
     
   </entry>
   
