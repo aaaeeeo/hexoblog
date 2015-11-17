@@ -66,6 +66,26 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Senegal Sojourn CH1]]></title>
+    <link href="http://yoursite.com/2015/11/17/SS1/"/>
+    <id>http://yoursite.com/2015/11/17/SS1/</id>
+    <published>2015-11-17T23:00:00.000Z</published>
+    <updated>2015-11-17T21:50:49.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https://books.google.com/books?id=zSx_MdBEIRoC" target="_blank" rel="external">Google Books</a><br><a href="http://www.amazon.com/Senegal-Sojourn-Selections-Teachers-Journal/dp/0739134620" target="_blank" rel="external">Amazon</a></p>
+<h2 id="Poem">Poem</h2><p>Baobab tree<br>猴面包树<br><a href="https://en.wikipedia.org/wiki/Adansonia" target="_blank" rel="external">Adansonia</a></p>
+<h2 id="Chapter_1">Chapter 1</h2><p>Short film: <a href="http://www.imdb.com/title/tt0282371/" target="_blank" rel="external"><strong><em>Baobab</em></strong></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Senegal_Sojourn:_Selections_from_One_Teacher’s_Journal">Senegal Sojourn: Selections from One Teacher’s Journal</h1><p><a href="https]]>
+    </summary>
+    
+      <category term="africa" scheme="http://yoursite.com/tags/africa/"/>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Algorithm Week 12]]></title>
     <link href="http://yoursite.com/2015/11/10/55001-12/"/>
     <id>http://yoursite.com/2015/11/10/55001-12/</id>
@@ -182,28 +202,6 @@ For back edge (u,v):</code>f[u]&lt;f[v]      (**)`<br>So, back edges go from low
       <category term="english" scheme="http://yoursite.com/tags/english/"/>
     
       <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2015/11/02/hello-world/"/>
-    <id>http://yoursite.com/2015/11/02/hello-world/</id>
-    <published>2015-11-03T01:47:19.000Z</published>
-    <updated>2015-11-03T01:47:19.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
     
   </entry>
   
