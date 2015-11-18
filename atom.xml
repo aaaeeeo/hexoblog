@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-17T22:41:38.000Z</updated>
+  <updated>2015-11-18T07:25:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Algorithm Week 13]]></title>
+    <link href="http://yoursite.com/2015/11/17/55001-13/"/>
+    <id>http://yoursite.com/2015/11/17/55001-13/</id>
+    <published>2015-11-18T03:00:00.000Z</published>
+    <updated>2015-11-18T07:25:15.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Priority_Queue">Priority Queue</h2><h3 id="DEF">DEF</h3><ol>
+<li>maintains a set S of elements, each associated with a numberic key value (d-values)</li>
+<li>Supports the following operation</li>
+</ol>
+<ul>
+<li>ISERT(S,x): insert element x into S</li>
+<li>MIN(S): Return element of S with smallest key</li>
+<li>EXTERT-MIN(S): return element of S with smallest key and removes ot from S</li>
+<li>DECREASE-KEY(S, x, k): decreases the value of x’s key to new value k</li>
+</ul>
+<h3 id="Implementations">Implementations</h3><ol>
+<li><strong>ARRAY</strong>: </li>
+</ol>
+<ul>
+<li>unordered array of key values for all elements<br>Initially key values set to $\infty$</li>
+<li>INSERT or DECREASE-KEY: O(1)<br>EXTERT-MIN: linear-time scan of array</li>
+</ul>
+<ol>
+<li><strong>BINARY HEAP</strong>: </li>
+</ol>
+<ul>
+<li>A binary tree (Almost complete)<br>represented as an array</li>
+</ul>
+<h3 id="Heap_as_binary_tree">Heap as binary tree</h3><p>-with n vertices, tree height O(lgn)</p>
+<ul>
+<li>root: first element in array (i=1) A[i]<br>PARENT(i)= $\lfloor \left.\frac i2\right. \rfloor$<br>LEFT(i)= 2i<br>RIGHT(i)= 2i+1</li>
+<li>min-healp property<br>key[PARENT(i)]&lt;=key[i], for all i&lt;1 other than root<br>A[PARENT(i)]&lt;=A[i]</li>
+<li>INSERT:<br><strong>MIN-HEAP-INSERT(A, key)</strong><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n=n+<span class="number">1</span></span><br><span class="line">i=n</span><br><span class="line">while i&gt;<span class="number">1</span> and A[<span class="function"><span class="title">parent</span><span class="params">(i)</span></span>]&gt;key</span><br><span class="line">   A[i] = A[<span class="function"><span class="title">parent</span><span class="params">(i)</span></span>]</span><br><span class="line">   <span class="tag">i</span> = <span class="function"><span class="title">PARENT</span><span class="params">(i)</span></span></span><br><span class="line">   A[i] = key</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong><em>O(lgn)</em></strong></p>
+<ul>
+<li>DECREASE-KEY:<br><strong>HEAP-DECREASE-KEY(A, i, key)</strong><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> A[i]&lt;key</span><br><span class="line">    return</span><br><span class="line">while i&gt;<span class="number">0</span> and A[<span class="function"><span class="title">PARENT</span><span class="params">(i)</span></span>]&gt;key</span><br><span class="line">    A[i]=A[<span class="function"><span class="title">PARENT</span><span class="params">(i)</span></span>]</span><br><span class="line">    i=<span class="function"><span class="title">PARENT</span><span class="params">(i)</span></span></span><br><span class="line">A[i]=key</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong><em>O(lgn)</em></strong></p>
+<ul>
+<li>EXTRACT-MIN:<br><strong>HEAP-EXTRACT-MIN(A)</strong><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">min=A[i]</span><br><span class="line">A[1]=A[<span class="keyword">n</span>]</span><br><span class="line"><span class="keyword">n</span>=<span class="keyword">n</span>-1</span><br><span class="line">MIN-HEAPIFY(A, 1, <span class="keyword">n</span>)</span><br><span class="line"><span class="keyword">return</span> <span class="literal">min</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>MIN-HEAPIFY(A, i, n)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//left and right subtrees of i are min-heaps</span></span><br><span class="line"><span class="comment">//makes i's subtree a min-heap</span></span><br><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">LEFT</span><span class="params">(i)</span></span>&lt;=n and A[<span class="function"><span class="title">LEFT</span><span class="params">(i)</span></span>]&lt;A[i]</span><br><span class="line">    smallest=<span class="function"><span class="title">LEFT</span><span class="params">(i)</span></span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    smallest=<span class="tag">i</span></span><br><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">RIGHT</span><span class="params">(i)</span></span>&lt;=n and A[<span class="function"><span class="title">RIGHT</span><span class="params">(i)</span></span>]&lt;A[smallest]</span><br><span class="line">    smallest=<span class="function"><span class="title">RIGHT</span><span class="params">(i)</span></span></span><br><span class="line"><span class="keyword">if</span> smallest!=<span class="tag">i</span></span><br><span class="line">    <span class="function"><span class="title">EXCHANGE</span><span class="params">(A[i], A[smallest])</span></span></span><br><span class="line">    <span class="function"><span class="title">MIN_HEAPIFY</span><span class="params">(A, smallest, n)</span></span></span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(lgn)</em></strong><br><a href="">CLRS, Section 6.5, pp.162-165</a></p>
+<p><strong>DIJKSTRA(G, w, s)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> each vertex v <span class="keyword">in</span> V</span><br><span class="line">    <span class="keyword">d</span>[v]=infinty</span><br><span class="line">    pi[v]=nil</span><br><span class="line"><span class="keyword">d</span>[s]=0</span><br><span class="line">Q=empty</span><br><span class="line"><span class="keyword">for</span> each vertex v <span class="keyword">in</span> V</span><br><span class="line">    INSERT(Q, v, <span class="keyword">d</span>[v])</span><br><span class="line"><span class="keyword">while</span> Q!=empty</span><br><span class="line">    <span class="keyword">u</span>=EXTRACT-<span class="literal">MIN</span>(Q)</span><br><span class="line">    <span class="keyword">for</span> each vertex v <span class="keyword">in</span> Adj[<span class="keyword">u</span>]</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">d</span>[v]&gt;<span class="keyword">d</span>[<span class="keyword">u</span>]+<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">        <span class="keyword">d</span>[v]=<span class="keyword">d</span>[<span class="keyword">u</span>]+<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">        DECREASE-KEY(Q, v, <span class="keyword">d</span>[v])</span><br><span class="line">        pi[v]=<span class="keyword">u</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Fredman-tarjan">Fredman-tarjan</h3><p>EXTER:<br>Fredman-tarjan<br>Fibonnacci heap</p>
+<h2 id="Bellman-Ford_ALG">Bellman-Ford ALG</h2><h3 id="DEF-1">DEF</h3><ul>
+<li>d[v]: Current best estimate of shorest path weight from s to v</li>
+<li>$\pi$[v]: Parent of v</li>
+<li>Initially: d[s] = 0, d[v] = $\infty$ for all v except s</li>
+</ul>
+<p><strong>BELLMAN-FORD(G, w, s)</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INITIATE-SINGLE-SOURCE(G, s)</span><br><span class="line">for i=1 to |V|-1            //improve: can <span class="operator"><span class="keyword">stop</span> <span class="keyword">when</span> <span class="keyword">no</span> <span class="keyword">change</span> happened</span><br><span class="line">            //V-<span class="number">1</span> because <span class="keyword">length</span> <span class="keyword">of</span> longest simple <span class="keyword">path</span> the V-<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> edge (u,v) <span class="keyword">in</span> <span class="keyword">E</span></span><br><span class="line">        RELEAX(u,v,w)</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> edge (u,v) <span class="keyword">in</span> <span class="keyword">E</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">d</span>[v]&gt;<span class="keyword">d</span>[u]+w(u,v)</span><br><span class="line">        <span class="keyword">return</span> flase        //negative <span class="keyword">cycle</span> reachable <span class="keyword">from</span> s <span class="keyword">exists</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>                 //<span class="keyword">d</span>[v]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(VE)</em></strong></p>
+<p><strong>INITILIZE-SINGLE-SOURCE(G, s)</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> vertex v <span class="operator">in</span> V</span><br><span class="line">    d[v] = infinity</span><br><span class="line">    <span class="constant">pi</span>[v] = NIL</span><br><span class="line">d[s]=<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>RELAX(u, v, w)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">d</span>[v] &gt; <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    <span class="keyword">d</span>[v] = <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    pi[v] = <span class="keyword">u</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Correctness">Correctness</h3><p>proof by induction<br>path:= $v_0 -&gt; v_1 -&gt; v_2 -&gt; … -&gt; v<em>j -&gt; v</em>{j+1} -&gt; v_k$</p>
+<ul>
+<li>BASE CASE: what is $d[v_0]$? Initially d[s]=0<br>what is S(S,$v_0$)? S(S,$v_0$)=0, O/W have a negative weight cycle</li>
+<li>INDUCTIVE STEP: assume by induction that d[$v_j$]=S(s,$v_j$)<br>after j rounds for j &lt; i, Prove for d[$v_j$] !=<br>[pic]</li>
+</ul>
+<h2 id="Shortest_Paths_in_DAGs">Shortest Paths in DAGs</h2><p>common problem -&gt; how fast?<br>IDEA: relax E edges on shorest paths in order so that all d-value converge after one pass<br><strong>DAG-SHOREST-PATHS(G, w, s)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TOPOLOGICAL-<span class="keyword">SORT</span>(<span class="keyword">G</span>)</span><br><span class="line"><span class="keyword">for</span> each vertex v <span class="keyword">in</span> V</span><br><span class="line">    <span class="keyword">d</span>[v]=infnty</span><br><span class="line">    pi[v]=nil</span><br><span class="line"><span class="keyword">d</span>[s]=0</span><br><span class="line"><span class="keyword">for</span> each vertex <span class="keyword">u</span>, <span class="keyword">in</span> <span class="keyword">order</span> of decreasing f[<span class="keyword">u</span>] time</span><br><span class="line">    <span class="keyword">for</span> each vertex v <span class="keyword">in</span> Adj[<span class="keyword">u</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">d</span>[v]&gt;<span class="keyword">d</span>[<span class="keyword">u</span>]+<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">            <span class="keyword">d</span>[v]=<span class="keyword">d</span>[<span class="keyword">u</span>]+<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">            pi[v]=<span class="keyword">u</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(V+E)</em></strong></p>
+<h2 id="MST:_Minimum_Spanning_Tree">MST: Minimum Spanning Tree</h2><ul>
+<li>input: Connected, undirected, weighted G=(V,E)<br>with weight function w, no constraint</li>
+<li>output: a spanning tree T(connects all vertices) of minimum weight<br>$$ w(T)=\sum_{(u,v)\in E} w(u,v)$$</li>
+</ul>
+<h3 id="Kruskal’s_ALG_(Greddy)">Kruskal’s ALG (Greddy)</h3><ol>
+<li>sort edges by weight</li>
+<li>choose any edge with smallest weight<br>put it into spanning tree building X</li>
+<li>successively consider remaining edges in order of increasing weight<br>add edge to X if does not create cycle with other edges in X</li>
+<li>stop after |v|-1 edges added to X</li>
+</ol>
+<p><strong>KRUSKAL(G,m)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sort</span> edge <span class="keyword">by</span> weight <span class="literal">w</span>(<span class="keyword">e</span>[1])&lt;=<span class="literal">w</span>(<span class="keyword">e</span>[2])&lt;= ... &lt;=<span class="literal">w</span>(<span class="keyword">e</span>[<span class="keyword">m</span>])    <span class="comment">//O(ElgE)-&gt;O(ElgV) when |E|=|V|^2</span></span><br><span class="line">X=empty</span><br><span class="line"><span class="keyword">for</span> i=1 to <span class="keyword">m</span>                                            <span class="comment">//O(E)</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">e</span>[i] does not create a cycle with edges <span class="keyword">in</span> X     <span class="comment">//O(VE) DFS to find cycle</span></span><br><span class="line">        X = X union &#123;<span class="keyword">e</span>[i]&#125;                              <span class="comment">//O(V)</span></span><br><span class="line">retuen X</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(VE)</em></strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Priority_Queue">Priority Queue</h2><h3 id="DEF">DEF</h3><ol>
+<li>maintains a set S of elements, each associated with a numberic key ]]>
+    </summary>
+    
+      <category term="15autumn" scheme="http://yoursite.com/tags/15autumn/"/>
+    
+      <category term="55001" scheme="http://yoursite.com/tags/55001/"/>
+    
+      <category term="english" scheme="http://yoursite.com/tags/english/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Senegal Sojourn]]></title>
@@ -194,12 +288,6 @@ For back edge (u,v):</code>f[u]&lt;f[v]      (**)`<br>So, back edges go from low
 <li>output: <ul>
 <li>d[v]: dis]]>
     </summary>
-    
-      <category term="15autumn" scheme="http://yoursite.com/tags/15autumn/"/>
-    
-      <category term="55001" scheme="http://yoursite.com/tags/55001/"/>
-    
-      <category term="english" scheme="http://yoursite.com/tags/english/"/>
     
       <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
     
