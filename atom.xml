@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-18T07:25:15.000Z</updated>
+  <updated>2015-11-18T07:27:57.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/11/17/55001-13/"/>
     <id>http://yoursite.com/2015/11/17/55001-13/</id>
     <published>2015-11-18T03:00:00.000Z</published>
-    <updated>2015-11-18T07:25:15.000Z</updated>
+    <updated>2015-11-18T07:27:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Priority_Queue">Priority Queue</h2><h3 id="DEF">DEF</h3><ol>
 <li>maintains a set S of elements, each associated with a numberic key value (d-values)</li>
 <li>Supports the following operation</li>
@@ -73,7 +73,7 @@
 <p><strong><em>O(VE)</em></strong></p>
 <p><strong>INITILIZE-SINGLE-SOURCE(G, s)</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> vertex v <span class="operator">in</span> V</span><br><span class="line">    d[v] = infinity</span><br><span class="line">    <span class="constant">pi</span>[v] = NIL</span><br><span class="line">d[s]=<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>RELAX(u, v, w)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">d</span>[v] &gt; <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    <span class="keyword">d</span>[v] = <span class="keyword">d</span>[<span class="keyword">u</span>] + <span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br><span class="line">    pi[v] = <span class="keyword">u</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Correctness">Correctness</h3><p>proof by induction<br>path:= $v_0 -&gt; v_1 -&gt; v_2 -&gt; … -&gt; v<em>j -&gt; v</em>{j+1} -&gt; v_k$</p>
+<h3 id="Correctness">Correctness</h3><p>proof by induction<br>path:= $v_0 -&gt; v_1 -&gt; v_2 -&gt; … -&gt; v_j -&gt; v_{j+1} -&gt; v_k$</p>
 <ul>
 <li>BASE CASE: what is $d[v_0]$? Initially d[s]=0<br>what is S(S,$v_0$)? S(S,$v_0$)=0, O/W have a negative weight cycle</li>
 <li>INDUCTIVE STEP: assume by induction that d[$v_j$]=S(s,$v_j$)<br>after j rounds for j &lt; i, Prove for d[$v_j$] !=<br>[pic]</li>
