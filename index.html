@@ -203,10 +203,82 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-55001-13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-51100-8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/17/55001-13/" class="article-date">
+      <a href="/2015/11/23/51100-8/" class="article-date">
+  	<time datetime="2015-11-24T03:00:00.000Z" itemprop="datePublished">2015-11-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank" rel="external">Morkov chain</a><br><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank" rel="external">Monte Carlo method</a></p>
+<h2 id="Inverse_Transform_Method">Inverse Transform Method</h2><p><a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+<ul>
+<li>Technique to select a random value from an arbitrary CDF (or PDF)</li>
+<li>Very efficient when it works analytically</li>
+<li>Often good numerically but not always</li>
+</ul>
+<h3 id="IVT_Algorithm">IVT Algorithm</h3><ol>
+<li>select U from v[0,1] i.e. uniformly</li>
+<li>find the value X such that<br> F(x)=U where F is the CDF<br>i.e. solve $X=F^{-1}(U)$</li>
+</ol>
+<h3 id="example">example</h3><p>cosider PDF: $p(x)=e^{-x}$ where  $0&lt;=x&lt;\infty$</p>
+<ol>
+<li>Find CDF:<br>$F(x)=1-e^{-x}$</li>
+<li>Invert CDF:<br>$F^{-1}(U)=-log(1-U)$</li>
+<li>select a U and evaluate $F^{-1}(U)$</li>
+</ol>
+<h2 id="Rejection_sampling">Rejection sampling</h2><p><a href="https://en.wikipedia.org/wiki/Rejection_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+<ul>
+<li>suppose you have a method of sampling from some PDF, call it g(x) and you want to draw a sample from some other PDF, f(x)</li>
+<li>if for some constant M,  $f(x)&lt;=Mg(x)$</li>
+</ul>
+<h3 id="REJ_Algorithm">REJ Algorithm</h3><ol>
+<li>sample X from g(x)</li>
+<li>calculte $\alpha$, the probability of accepting X<br>$$\alpha=\frac{f(x)}{Mg(x)} \,\, (note \,\, 0&lt;=\alpha&lt;=1)$$ </li>
+<li>sample U from U(0,1]</li>
+<li>if $\alpha$&gt;=U accept, else reject</li>
+<li>repeat</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/notes/">notes</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-55001-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/17/55001-7/" class="article-date">
   	<time datetime="2015-11-18T03:00:00.000Z" itemprop="datePublished">2015-11-17</time>
 </a>
     </div>
@@ -220,7 +292,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/17/55001-13/">Algorithm Week 13</a>
+      <a class="article-title" href="/2015/11/17/55001-7/">Algorithm Week 7</a>
     </h1>
   
 
@@ -394,10 +466,10 @@
 
 
   
-    <article id="post-51100-13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-51100-7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/16/51100-13/" class="article-date">
+      <a href="/2015/11/16/51100-7/" class="article-date">
   	<time datetime="2015-11-17T03:00:00.000Z" itemprop="datePublished">2015-11-16</time>
 </a>
     </div>
@@ -411,7 +483,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/16/51100-13/">Advanced Programming Week 13</a>
+      <a class="article-title" href="/2015/11/16/51100-7/">Advanced Programming Week 7</a>
     </h1>
   
 
@@ -481,10 +553,10 @@
 
 
   
-    <article id="post-55001-12" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-55001-6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/10/55001-12/" class="article-date">
+      <a href="/2015/11/10/55001-6/" class="article-date">
   	<time datetime="2015-11-11T03:00:00.000Z" itemprop="datePublished">2015-11-10</time>
 </a>
     </div>
@@ -498,7 +570,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/10/55001-12/">Algorithm Week 12</a>
+      <a class="article-title" href="/2015/11/10/55001-6/">Algorithm Week 6</a>
     </h1>
   
 

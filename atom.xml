@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-18T07:27:57.000Z</updated>
+  <updated>2015-11-24T05:45:57.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Algorithm Week 13]]></title>
-    <link href="http://yoursite.com/2015/11/17/55001-13/"/>
-    <id>http://yoursite.com/2015/11/17/55001-13/</id>
+    <title></title>
+    <link href="http://yoursite.com/2015/11/23/51100-8/"/>
+    <id>http://yoursite.com/2015/11/23/51100-8/</id>
+    <published>2015-11-24T03:00:00.000Z</published>
+    <updated>2015-11-24T05:45:57.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank" rel="external">Morkov chain</a><br><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank" rel="external">Monte Carlo method</a></p>
+<h2 id="Inverse_Transform_Method">Inverse Transform Method</h2><p><a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+<ul>
+<li>Technique to select a random value from an arbitrary CDF (or PDF)</li>
+<li>Very efficient when it works analytically</li>
+<li>Often good numerically but not always</li>
+</ul>
+<h3 id="IVT_Algorithm">IVT Algorithm</h3><ol>
+<li>select U from v[0,1] i.e. uniformly</li>
+<li>find the value X such that<br> F(x)=U where F is the CDF<br>i.e. solve $X=F^{-1}(U)$</li>
+</ol>
+<h3 id="example">example</h3><p>cosider PDF: $p(x)=e^{-x}$ where  $0&lt;=x&lt;\infty$</p>
+<ol>
+<li>Find CDF:<br>$F(x)=1-e^{-x}$</li>
+<li>Invert CDF:<br>$F^{-1}(U)=-log(1-U)$</li>
+<li>select a U and evaluate $F^{-1}(U)$</li>
+</ol>
+<h2 id="Rejection_sampling">Rejection sampling</h2><p><a href="https://en.wikipedia.org/wiki/Rejection_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+<ul>
+<li>suppose you have a method of sampling from some PDF, call it g(x) and you want to draw a sample from some other PDF, f(x)</li>
+<li>if for some constant M,  $f(x)&lt;=Mg(x)$</li>
+</ul>
+<h3 id="REJ_Algorithm">REJ Algorithm</h3><ol>
+<li>sample X from g(x)</li>
+<li>calculte $\alpha$, the probability of accepting X<br>$$\alpha=\frac{f(x)}{Mg(x)} \,\, (note \,\, 0&lt;=\alpha&lt;=1)$$ </li>
+<li>sample U from U(0,1]</li>
+<li>if $\alpha$&gt;=U accept, else reject</li>
+<li>repeat</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.w]]>
+    </summary>
+    
+      <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Algorithm Week 7]]></title>
+    <link href="http://yoursite.com/2015/11/17/55001-7/"/>
+    <id>http://yoursite.com/2015/11/17/55001-7/</id>
     <published>2015-11-18T03:00:00.000Z</published>
-    <updated>2015-11-18T07:27:57.000Z</updated>
+    <updated>2015-11-24T05:45:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Priority_Queue">Priority Queue</h2><h3 id="DEF">DEF</h3><ol>
 <li>maintains a set S of elements, each associated with a numberic key value (d-values)</li>
 <li>Supports the following operation</li>
@@ -129,11 +173,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Advanced Programming Week 13]]></title>
-    <link href="http://yoursite.com/2015/11/16/51100-13/"/>
-    <id>http://yoursite.com/2015/11/16/51100-13/</id>
+    <title><![CDATA[Advanced Programming Week 7]]></title>
+    <link href="http://yoursite.com/2015/11/16/51100-7/"/>
+    <id>http://yoursite.com/2015/11/16/51100-7/</id>
     <published>2015-11-17T03:00:00.000Z</published>
-    <updated>2015-11-17T23:10:32.000Z</updated>
+    <updated>2015-11-24T05:45:02.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Union_Find">Union Find</h2><p>ppt</p>
 <h2 id="Propability">Propability</h2><h3 id="Sample_space_and_Events">Sample space and Events</h3><ul>
 <li>let S = { all possible ordings 1…7 }<br>S:”Sample Space”</li>
@@ -180,11 +224,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Algorithm Week 12]]></title>
-    <link href="http://yoursite.com/2015/11/10/55001-12/"/>
-    <id>http://yoursite.com/2015/11/10/55001-12/</id>
+    <title><![CDATA[Algorithm Week 6]]></title>
+    <link href="http://yoursite.com/2015/11/10/55001-6/"/>
+    <id>http://yoursite.com/2015/11/10/55001-6/</id>
     <published>2015-11-11T03:00:00.000Z</published>
-    <updated>2015-11-17T21:05:09.000Z</updated>
+    <updated>2015-11-24T05:45:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Review:_DFS">Review: DFS</h2><ul>
 <li>input: G=(V,E), Directed or Undirected, in ADJ list format</li>
 <li>output: <ul>
