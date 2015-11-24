@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-24T05:47:25.000Z</updated>
+  <updated>2015-11-24T05:55:14.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://yoursite.com/2015/11/23/51100-8/"/>
     <id>http://yoursite.com/2015/11/23/51100-8/</id>
     <published>2015-11-24T03:00:00.000Z</published>
-    <updated>2015-11-24T05:47:25.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank" rel="external">Morkov chain</a><br><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank" rel="external">Monte Carlo method</a></p>
-<h2 id="Inverse_Transform_Method">Inverse Transform Method</h2><p><a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+    <updated>2015-11-24T05:55:14.000Z</updated>
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="Intro">Intro</h2><p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank" rel="external">Morkov chain</a><br><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank" rel="external">Monte Carlo method</a></p>
+<h2 id="Inverse_Transform_Sampling">Inverse Transform Sampling</h2><p><a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
 <ul>
 <li>Technique to select a random value from an arbitrary CDF (or PDF)</li>
 <li>Very efficient when it works analytically</li>
@@ -37,7 +38,7 @@
 <li>Invert CDF:<br>$F^{-1}(U)=-log(1-U)$</li>
 <li>select a U and evaluate $F^{-1}(U)$</li>
 </ol>
-<h2 id="Rejection_sampling">Rejection sampling</h2><p><a href="https://en.wikipedia.org/wiki/Rejection_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
+<h2 id="Rejection_Sampling">Rejection Sampling</h2><p><a href="https://en.wikipedia.org/wiki/Rejection_sampling" target="_blank" rel="external"><strong>wiki</strong></a></p>
 <ul>
 <li>suppose you have a method of sampling from some PDF, call it g(x) and you want to draw a sample from some other PDF, f(x)</li>
 <li>if for some constant M,  $f(x)&lt;=Mg(x)$</li>
@@ -51,7 +52,8 @@
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hall problem</a><br><a href="https://en.w]]>
+    <![CDATA[<p>[TOC]</p>
+<h2 id="Intro">Intro</h2><p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="external">Monty Hal]]>
     </summary>
     
       <category term="notes" scheme="http://yoursite.com/categories/notes/"/>
