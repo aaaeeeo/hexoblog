@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Algorithm Week 8 | LOSO&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Minimum Spanning Tree Problem
+input: connected, undirected weighted graph G=(V,E)
+output: A spanning tree T
+
+Kruskal’s AlgorithmKRUSKAL(G,m)123456sort edge by weight w(e[1])&amp;lt;=w(e[2])&amp;lt;= ... &amp;lt;=">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm Week 8">
+<meta property="og:url" content="http://yoursite.com/2015/11/24/55001-8/index.html">
+<meta property="og:site_name" content="LOSO's blog">
+<meta property="og:description" content="Minimum Spanning Tree Problem
+input: connected, undirected weighted graph G=(V,E)
+output: A spanning tree T
+
+Kruskal’s AlgorithmKRUSKAL(G,m)123456sort edge by weight w(e[1])&amp;lt;=w(e[2])&amp;lt;= ... &amp;lt;=">
+<meta property="og:updated_time" content="2015-12-01T01:11:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm Week 8">
+<meta name="twitter:description" content="Minimum Spanning Tree Problem
+input: connected, undirected weighted graph G=(V,E)
+output: A spanning tree T
+
+Kruskal’s AlgorithmKRUSKAL(G,m)123456sort edge by weight w(e[1])&amp;lt;=w(e[2])&amp;lt;= ... &amp;lt;=">
+  
+    <link rel="alternative" href="/atom.xml" title="LOSO&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/p.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Zuoming Li</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/notes/">课堂笔记</a></li>
+				        
+							<li><a href="/categories/reading/">读书笔记</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/aaaeeeo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/aaaeeeo/" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-zuo-ming" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/nblzm/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:lee.zuoming@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/zuoming.li" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/110199814197862196402" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/aaaeeeo" title="twitter">twitter</a>
+					        
+								<a class="hupu" target="_blank" href="http://my.hupu.com/aaaeeeo" title="hupu">hupu</a>
+					        
+								<a class="linkedin" target="_blank" href="https://www.linkedin.com/profile/view?id=AAIAABYigoABKuT00iyHJ_OOH4PvgESTDsfrwaY" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/15autumn/" style="font-size: 20px;">15autumn</a> <a href="/tags/51100/" style="font-size: 10px;">51100</a> <a href="/tags/55001/" style="font-size: 10px;">55001</a> <a href="/tags/africa/" style="font-size: 10px;">africa</a> <a href="/tags/english/" style="font-size: 20px;">english</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">route 172 university of chicago-kenwood to ellis-60th street</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Zuoming Li</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/p.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Zuoming Li</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/notes/">课堂笔记</a></li>
+		        
+					<li><a href="/categories/reading/">读书笔记</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/aaaeeeo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/aaaeeeo/" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-zuo-ming" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/nblzm/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:lee.zuoming@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/zuoming.li" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/110199814197862196402" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/aaaeeeo" title="twitter">twitter</a>
+			        
+						<a class="hupu" target="_blank" href="http://my.hupu.com/aaaeeeo" title="hupu">hupu</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/profile/view?id=AAIAABYigoABKuT00iyHJ_OOH4PvgESTDsfrwaY" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-55001-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/24/55001-8/" class="article-date">
+  	<time datetime="2015-11-25T03:00:00.000Z" itemprop="datePublished">2015-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Algorithm Week 8
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15autumn/">15autumn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/55001/">55001</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/notes/">notes</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Minimum_Spanning_Tree_Problem">Minimum Spanning Tree Problem</h2><ul>
+<li>input: connected, undirected weighted graph G=(V,E)</li>
+<li>output: A spanning tree T</li>
+</ul>
+<h3 id="Kruskal’s_Algorithm">Kruskal’s Algorithm</h3><p><strong>KRUSKAL(G,m)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sort</span> edge <span class="keyword">by</span> weight <span class="literal">w</span>(<span class="keyword">e</span>[1])&lt;=<span class="literal">w</span>(<span class="keyword">e</span>[2])&lt;= ... &lt;=<span class="literal">w</span>(<span class="keyword">e</span>[<span class="keyword">m</span>])    <span class="comment">//O(ElgE)-&gt;O(ElgV) when |E|=|V|^2</span></span><br><span class="line">X=empty</span><br><span class="line"><span class="keyword">for</span> i=1 to <span class="keyword">m</span>                                            <span class="comment">//O(E)</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">e</span>[i] does not create a cycle with edges <span class="keyword">in</span> X     <span class="comment">//O(VE) DFS to find cycle</span></span><br><span class="line">        X = X union &#123;<span class="keyword">e</span>[i]&#125;                              <span class="comment">//O(V)</span></span><br><span class="line">retuen X</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(VE)</em></strong>   : slow</p>
+<h3 id="Prm’s_Algorithm">Prm’s Algorithm</h3><ol>
+<li>select a “root”</li>
+<li>grow a tree from the root by selecting the least-weight edge with one vertex already in tree that building</li>
+</ol>
+<h3 id="correctness_:_use_“cut”">correctness : use “cut”</h3><ul>
+<li>DEF: A cut is any partition of vertices V into two nonempty sets, S and V-S.</li>
+</ul>
+<ol>
+<li>The two cells of set $C_1$ and $C_2$ are disjoint, $C_1\cap C_2=\emptyset$</li>
+<li>$C_1\cup C_2=V$</li>
+</ol>
+<ul>
+<li>CUT Property: </li>
+</ul>
+<ol>
+<li>Let G=(V,E) be a connected, undirected, weighted graph. </li>
+<li>Suppose edges $X\subseteq E$ are part of an MST T of G</li>
+<li>pick any nonempty subset S of vertinces V, $S\subseteq V$, such that no edge in X crosses between S and V-S</li>
+<li>Let $e\in E$ be an edge of minimum weight across this CUT(S, V-S), then $X\cup{e}$ is part of some MST of G, i.e. $X\cup{e}\subseteq T’$, where T’ is an MST of G</li>
+</ol>
+<ul>
+<li>proof:<blockquote>
+<p>edges X are part of some MST T of G. e=(u,v), edge of min weight across cut</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>CASE 1: if the new edge $e\in T$ also, then there is nothing to prove</li>
+<li>CASE 2: assume $e\notin T$, will construct a different MST T’ containing $X\cup{e}$<br>add edge e to T: $T\cup{e}$<br>since T is connected and spans G, T already contains a path from u to v, so adding e=（u,v）creates a cycle<br>This cycle must have some other edge e’ across CUT(S, V-S)<br>if we remove this edge e’, we get $T’ = T \cup {e}-{e’}$ show T’ is a tree<br>T’ is connected, since T is connected and e’ is a cycle edge<br>T’ has the same number of edges as T, so T’ is a tree.<br>Moreover, T’ is an MST<br>Because w(T’)=w(T)+w(e)-w(e’), both e and e’ cross the CUT(S,V-S), and e is epcifically the min weight edge of this type<br>So, w(e)&lt;=w(e’), w(T’)&lt;=w(T) -&gt; w(T’)=w(T)<br>Thus, T’ is also an MST</li>
+</ol>
+<p><strong>PRIM(G,w,r)</strong>  //G=(V,E) in adj list, $r\in V$ start vertex<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key[u] = weight of an edge connecting u to a vertex in S</span></span><br><span class="line"><span class="comment">//pi[u] = parent of u</span></span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">u</span> <span class="keyword">in</span> V</span><br><span class="line">    key[<span class="keyword">u</span>] = infinity</span><br><span class="line">    pi[<span class="keyword">u</span>] = NIL</span><br><span class="line">    color[<span class="keyword">u</span>] = WHITE</span><br><span class="line">key[r] = 0</span><br><span class="line">Q = V       <span class="comment">//ordered by key[u]</span></span><br><span class="line"><span class="keyword">while</span> Q != empty</span><br><span class="line">    <span class="keyword">u</span> = EXTRACT-<span class="literal">MIN</span>(Q)</span><br><span class="line">    color[<span class="keyword">u</span>] = BLACK</span><br><span class="line">    <span class="keyword">for</span> each v <span class="keyword">in</span> Adj[<span class="keyword">u</span>]</span><br><span class="line">        <span class="keyword">if</span> color[v]==WHITE and <span class="literal">w</span>(<span class="keyword">u</span>,v)&lt;key[v]    <span class="comment">//CLRS if v is in Q and w(u,v)&lt;key[v]</span></span><br><span class="line">            pi[v]=<span class="keyword">u</span></span><br><span class="line">            key[v]=<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>complexity:<br>|V|<em>cost of insert + |V|</em>cost of extract-min + |E| <em> cost of decrease-key<br>Binary min-heap: O(lgV)<br>running time: O((V+E)lgV) -&gt; **</em>O(ElgV)<em>*</em><br>since G is connected: |E|&gt;=|V|-1</p>
+</li>
+<li><p>PRIM almost identical to DIJKSTRA, with difference:</p>
+<ul>
+<li>IN PRIM:<br>key[v]= weight of an edge connecting v ro a vertex in S<br>pi[v]= tree edge of MST</li>
+<li>IN DIJKSTRA:<br>d[v]= weight of entire path from s to v<br>pi[v]= tree path of shorest path</li>
+</ul>
+</li>
+</ul>
+<p>[example pic]</p>
+<h3 id="UNION-FIND_data_structure">UNION-FIND data structure</h3><ul>
+<li>operations:</li>
+</ul>
+<ol>
+<li>MAKESET(x): creates a new set just containing X</li>
+<li>FIND(x): what is the name of the set containing x?</li>
+<li>UNIOX(x,y): merge sets containing x and y</li>
+</ol>
+<p><strong>MAKEST(x)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">pi</span><span class="params">(x)</span></span>-x     <span class="comment">//pi(x)= parent of x, if x is the root, pi(x)=x</span></span><br><span class="line"><span class="function"><span class="title">rank</span><span class="params">(x)</span></span>=<span class="number">0</span>   <span class="comment">//rank(x)= height of the subtree below x</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>FIND(x)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//follows parent to root of tree</span></span><br><span class="line">while x!=<span class="function"><span class="title">pi</span><span class="params">(x)</span></span></span><br><span class="line">    x=<span class="function"><span class="title">pi</span><span class="params">(x)</span></span></span><br><span class="line">return x</span><br></pre></td></tr></table></figure></p>
+<p><strong>UNION(x,y)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">rank</span><span class="params">(FIND(x)</span></span>) &gt; <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)</span><br><span class="line">    <span class="function"><span class="title">pi</span><span class="params">(FIND(y)</span></span>)=<span class="function"><span class="title">FIND</span><span class="params">(x)</span></span>         <span class="comment">//make root of shorter tree point to the root of taller tree</span></span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    <span class="function"><span class="title">pi</span><span class="params">(FIND(x)</span></span>)=<span class="function"><span class="title">FIND</span><span class="params">(y)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="function"><span class="title">rank</span><span class="params">(FIND(x)</span></span>) = <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)</span><br><span class="line">        <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)=<span class="function"><span class="title">rank</span><span class="params">(FIND(X)</span></span>)+<span class="number">1</span> <span class="comment">//height increases only if two trees are equally tall</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>KRUSKAL(G,v)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x=empty</span><br><span class="line"><span class="keyword">for</span> each vertex <span class="keyword">u</span> <span class="keyword">in</span> V</span><br><span class="line">    MAKESET(<span class="keyword">u</span>)</span><br><span class="line"><span class="keyword">SORT</span>(<span class="keyword">E</span>)                     <span class="comment">//by increasing order of weight w</span></span><br><span class="line"><span class="keyword">for</span> each edge(<span class="keyword">u</span>,v) <span class="keyword">in</span> <span class="keyword">E</span>     <span class="comment">//in increasing order of weoght w</span></span><br><span class="line">    <span class="keyword">if</span> FIND(<span class="keyword">u</span>)!=FIND(v)</span><br><span class="line">        X=X ∪ &#123; (<span class="keyword">u</span>,v) &#125;</span><br><span class="line">        UNION(<span class="keyword">u</span>,v)</span><br></pre></td></tr></table></figure></p>
+<p>Running time:<br>SORT: O(ElgV)<br>O(E) <em> FIND = O(ElgV)<br>O(V) </em> UNION = O(V)<br>|V|  <em> MAKESET = O(V)<br>overall: **</em>O(ElgV)<em>*</em></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/23/51100-8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Advanced Programming week 8</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_cqq"></a>
+	<a class="jiathis_button_email"></a>
+	<a class="jiathis_button_copy"></a>
+	<a href="http://www.jiathis.com/share?uid=2068360" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2068360" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="55001-8" data-title="Algorithm Week 8" data-url="http://yoursite.com/2015/11/24/55001-8/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"aaaeeeo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Zuoming Li
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

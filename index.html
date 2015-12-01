@@ -203,6 +203,125 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-55001-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/24/55001-8/" class="article-date">
+  	<time datetime="2015-11-25T03:00:00.000Z" itemprop="datePublished">2015-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/24/55001-8/">Algorithm Week 8</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Minimum_Spanning_Tree_Problem">Minimum Spanning Tree Problem</h2><ul>
+<li>input: connected, undirected weighted graph G=(V,E)</li>
+<li>output: A spanning tree T</li>
+</ul>
+<h3 id="Kruskal’s_Algorithm">Kruskal’s Algorithm</h3><p><strong>KRUSKAL(G,m)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sort</span> edge <span class="keyword">by</span> weight <span class="literal">w</span>(<span class="keyword">e</span>[1])&lt;=<span class="literal">w</span>(<span class="keyword">e</span>[2])&lt;= ... &lt;=<span class="literal">w</span>(<span class="keyword">e</span>[<span class="keyword">m</span>])    <span class="comment">//O(ElgE)-&gt;O(ElgV) when |E|=|V|^2</span></span><br><span class="line">X=empty</span><br><span class="line"><span class="keyword">for</span> i=1 to <span class="keyword">m</span>                                            <span class="comment">//O(E)</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">e</span>[i] does not create a cycle with edges <span class="keyword">in</span> X     <span class="comment">//O(VE) DFS to find cycle</span></span><br><span class="line">        X = X union &#123;<span class="keyword">e</span>[i]&#125;                              <span class="comment">//O(V)</span></span><br><span class="line">retuen X</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>O(VE)</em></strong>   : slow</p>
+<h3 id="Prm’s_Algorithm">Prm’s Algorithm</h3><ol>
+<li>select a “root”</li>
+<li>grow a tree from the root by selecting the least-weight edge with one vertex already in tree that building</li>
+</ol>
+<h3 id="correctness_:_use_“cut”">correctness : use “cut”</h3><ul>
+<li>DEF: A cut is any partition of vertices V into two nonempty sets, S and V-S.</li>
+</ul>
+<ol>
+<li>The two cells of set $C_1$ and $C_2$ are disjoint, $C_1\cap C_2=\emptyset$</li>
+<li>$C_1\cup C_2=V$</li>
+</ol>
+<ul>
+<li>CUT Property: </li>
+</ul>
+<ol>
+<li>Let G=(V,E) be a connected, undirected, weighted graph. </li>
+<li>Suppose edges $X\subseteq E$ are part of an MST T of G</li>
+<li>pick any nonempty subset S of vertinces V, $S\subseteq V$, such that no edge in X crosses between S and V-S</li>
+<li>Let $e\in E$ be an edge of minimum weight across this CUT(S, V-S), then $X\cup{e}$ is part of some MST of G, i.e. $X\cup{e}\subseteq T’$, where T’ is an MST of G</li>
+</ol>
+<ul>
+<li>proof:<blockquote>
+<p>edges X are part of some MST T of G. e=(u,v), edge of min weight across cut</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>CASE 1: if the new edge $e\in T$ also, then there is nothing to prove</li>
+<li>CASE 2: assume $e\notin T$, will construct a different MST T’ containing $X\cup{e}$<br>add edge e to T: $T\cup{e}$<br>since T is connected and spans G, T already contains a path from u to v, so adding e=（u,v）creates a cycle<br>This cycle must have some other edge e’ across CUT(S, V-S)<br>if we remove this edge e’, we get $T’ = T \cup {e}-{e’}$ show T’ is a tree<br>T’ is connected, since T is connected and e’ is a cycle edge<br>T’ has the same number of edges as T, so T’ is a tree.<br>Moreover, T’ is an MST<br>Because w(T’)=w(T)+w(e)-w(e’), both e and e’ cross the CUT(S,V-S), and e is epcifically the min weight edge of this type<br>So, w(e)&lt;=w(e’), w(T’)&lt;=w(T) -&gt; w(T’)=w(T)<br>Thus, T’ is also an MST</li>
+</ol>
+<p><strong>PRIM(G,w,r)</strong>  //G=(V,E) in adj list, $r\in V$ start vertex<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key[u] = weight of an edge connecting u to a vertex in S</span></span><br><span class="line"><span class="comment">//pi[u] = parent of u</span></span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">u</span> <span class="keyword">in</span> V</span><br><span class="line">    key[<span class="keyword">u</span>] = infinity</span><br><span class="line">    pi[<span class="keyword">u</span>] = NIL</span><br><span class="line">    color[<span class="keyword">u</span>] = WHITE</span><br><span class="line">key[r] = 0</span><br><span class="line">Q = V       <span class="comment">//ordered by key[u]</span></span><br><span class="line"><span class="keyword">while</span> Q != empty</span><br><span class="line">    <span class="keyword">u</span> = EXTRACT-<span class="literal">MIN</span>(Q)</span><br><span class="line">    color[<span class="keyword">u</span>] = BLACK</span><br><span class="line">    <span class="keyword">for</span> each v <span class="keyword">in</span> Adj[<span class="keyword">u</span>]</span><br><span class="line">        <span class="keyword">if</span> color[v]==WHITE and <span class="literal">w</span>(<span class="keyword">u</span>,v)&lt;key[v]    <span class="comment">//CLRS if v is in Q and w(u,v)&lt;key[v]</span></span><br><span class="line">            pi[v]=<span class="keyword">u</span></span><br><span class="line">            key[v]=<span class="literal">w</span>(<span class="keyword">u</span>,v)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>complexity:<br>|V|<em>cost of insert + |V|</em>cost of extract-min + |E| <em> cost of decrease-key<br>Binary min-heap: O(lgV)<br>running time: O((V+E)lgV) -&gt; **</em>O(ElgV)<em>*</em><br>since G is connected: |E|&gt;=|V|-1</p>
+</li>
+<li><p>PRIM almost identical to DIJKSTRA, with difference:</p>
+<ul>
+<li>IN PRIM:<br>key[v]= weight of an edge connecting v ro a vertex in S<br>pi[v]= tree edge of MST</li>
+<li>IN DIJKSTRA:<br>d[v]= weight of entire path from s to v<br>pi[v]= tree path of shorest path</li>
+</ul>
+</li>
+</ul>
+<p>[example pic]</p>
+<h3 id="UNION-FIND_data_structure">UNION-FIND data structure</h3><ul>
+<li>operations:</li>
+</ul>
+<ol>
+<li>MAKESET(x): creates a new set just containing X</li>
+<li>FIND(x): what is the name of the set containing x?</li>
+<li>UNIOX(x,y): merge sets containing x and y</li>
+</ol>
+<p><strong>MAKEST(x)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">pi</span><span class="params">(x)</span></span>-x     <span class="comment">//pi(x)= parent of x, if x is the root, pi(x)=x</span></span><br><span class="line"><span class="function"><span class="title">rank</span><span class="params">(x)</span></span>=<span class="number">0</span>   <span class="comment">//rank(x)= height of the subtree below x</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>FIND(x)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//follows parent to root of tree</span></span><br><span class="line">while x!=<span class="function"><span class="title">pi</span><span class="params">(x)</span></span></span><br><span class="line">    x=<span class="function"><span class="title">pi</span><span class="params">(x)</span></span></span><br><span class="line">return x</span><br></pre></td></tr></table></figure></p>
+<p><strong>UNION(x,y)</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">rank</span><span class="params">(FIND(x)</span></span>) &gt; <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)</span><br><span class="line">    <span class="function"><span class="title">pi</span><span class="params">(FIND(y)</span></span>)=<span class="function"><span class="title">FIND</span><span class="params">(x)</span></span>         <span class="comment">//make root of shorter tree point to the root of taller tree</span></span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    <span class="function"><span class="title">pi</span><span class="params">(FIND(x)</span></span>)=<span class="function"><span class="title">FIND</span><span class="params">(y)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="function"><span class="title">rank</span><span class="params">(FIND(x)</span></span>) = <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)</span><br><span class="line">        <span class="function"><span class="title">rank</span><span class="params">(FIND(y)</span></span>)=<span class="function"><span class="title">rank</span><span class="params">(FIND(X)</span></span>)+<span class="number">1</span> <span class="comment">//height increases only if two trees are equally tall</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>KRUSKAL(G,v)</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x=empty</span><br><span class="line"><span class="keyword">for</span> each vertex <span class="keyword">u</span> <span class="keyword">in</span> V</span><br><span class="line">    MAKESET(<span class="keyword">u</span>)</span><br><span class="line"><span class="keyword">SORT</span>(<span class="keyword">E</span>)                     <span class="comment">//by increasing order of weight w</span></span><br><span class="line"><span class="keyword">for</span> each edge(<span class="keyword">u</span>,v) <span class="keyword">in</span> <span class="keyword">E</span>     <span class="comment">//in increasing order of weoght w</span></span><br><span class="line">    <span class="keyword">if</span> FIND(<span class="keyword">u</span>)!=FIND(v)</span><br><span class="line">        X=X ∪ &#123; (<span class="keyword">u</span>,v) &#125;</span><br><span class="line">        UNION(<span class="keyword">u</span>,v)</span><br></pre></td></tr></table></figure></p>
+<p>Running time:<br>SORT: O(ElgV)<br>O(E) <em> FIND = O(ElgV)<br>O(V) </em> UNION = O(V)<br>|V|  <em> MAKESET = O(V)<br>overall: **</em>O(ElgV)<em>*</em></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15autumn/">15autumn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/55001/">55001</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/notes/">notes</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-51100-8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -391,10 +510,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15autumn/">15autumn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/55001/">55001</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li></ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/notes/">notes</a>
