@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-12T03:58:51.000Z</updated>
+  <updated>2016-03-12T04:00:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2016/03/11/linux/"/>
     <id>http://yoursite.com/2016/03/11/linux/</id>
     <published>2016-03-12T04:00:00.000Z</published>
-    <updated>2016-03-12T03:58:51.000Z</updated>
+    <updated>2016-03-12T04:00:29.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Linux">Linux</h1><p>man [command]<br>查看一个linux命令的说明文档  </p>
 <h2 id="文件/目录修改">文件/目录修改</h2><ol>
 <li><p>cd  </p>
@@ -99,19 +99,17 @@
 <li><p>find [PATH] [option] [action]<br>find是一个基于查找的功能非常强大的命令  </p>
 <blockquote>
 <p>[PATH]: 查找路径<br>[option]: 查找内容<br>[action]: 对找到内容执行的动作，-print或 -exec ‘command’ {} \;<br>例：<br>find ./ -name file1 -print ,从当前目录向下查找名为 file1 的文件并打印出来<br>find ./ -size 0 -exec rm {} \; 删除文件大小为零的文件（还可以以这样做：rm -i `find ./ -size 0`  或 find ./ -size 0 | xargs rm -f &amp;）<br>find /root/py -mtime +10 -name “*.dmp” -exec cp {} /root/davetmp/  /;</p>
-</blockquote>
-</li>
-</ol>
 <ul>
 <li><p>与时间有关的参数：<br>-mtime n : n为数字，意思为在n天之前的“一天内”被更改过的文件；<br>-mtime +n : 列出在n天之前（不含n天本身）被更改过的文件名；<br>-mtime -n : 列出在n天之内（含n天本身）被更改过的文件名；<br>-newer file : 列出比file还要新的文件名<br>例如：<br>find /root -mtime 0 #在当前目录下查找今天之内有改动的文件  </p>
 </li>
 <li><p>与用户或用户组名有关的参数：<br>-user name : 列出文件所有者为name的文件<br>-group name : 列出文件所属用户组为name的文件<br>-uid n : 列出文件所有者为用户ID为n的文件<br>-gid n : 列出文件所属用户组为用户组ID为n的文件<br>例如：<br>find /home/ljianhui -user ljianhui #在目录/home/ljianhui中找出所有者为ljianhui的文件  </p>
 </li>
-<li><p>与文件权限及名称有关的参数：<br>-name filename ：找出文件名为filename的文件<br>-size [+-]SIZE ：找出比SIZE还要大（+）或小（-）的文件<br>-tpye TYPE ：查找文件的类型为TYPE的文件，TYPE的值主要有：一般文件（f)、设备文件（b、c）、  </p>
-<pre><code>目录（<span class="keyword">d</span>）、连接文件（<span class="keyword">l</span>）、socket（s）、FIFO管道文件（p）；  
-</code></pre><p>-perm mode ：查找文件权限刚好等于mode的文件，mode用数字表示，如0755；<br>-perm -mode ：查找文件权限必须要全部包括mode权限的文件，mode用数字表示<br>-perm +mode ：查找文件权限包含任一mode的权限的文件，mode用数字表示<br>例如：<br>find / -name passwd # 查找文件名为passwd的文件<br>find . -perm 0755 # 查找当前目录中文件权限的0755的文件<br>find . -size +12k # 查找当前目录中大于12KB的文件，注意c表示byte  </p>
+<li><p>与文件权限及名称有关的参数：<br>-name filename ：找出文件名为filename的文件<br>-size [+-]SIZE ：找出比SIZE还要大（+）或小（-）的文件<br>-tpye TYPE ：查找文件的类型为TYPE的文件，TYPE的值主要有：一般文件（f)、设备文件（b、c）、目录（d）、连接文件（l）、socket（s）、FIFO管道文件（p）；<br>-perm mode ：查找文件权限刚好等于mode的文件，mode用数字表示，如0755；<br>-perm -mode ：查找文件权限必须要全部包括mode权限的文件，mode用数字表示<br>-perm +mode ：查找文件权限包含任一mode的权限的文件，mode用数字表示<br>例如：<br>find / -name passwd # 查找文件名为passwd的文件<br>find . -perm 0755 # 查找当前目录中文件权限的0755的文件<br>find . -size +12k # 查找当前目录中大于12KB的文件，注意c表示byte  </p>
 </li>
 </ul>
+</blockquote>
+</li>
+</ol>
 <h2 id="权限相关">权限相关</h2><ol>
 <li><p>chmod  </p>
 <blockquote>
