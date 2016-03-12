@@ -298,8 +298,6 @@
 <p>-y或–side-by-side 　以并列的方式显示文件的异同之处<br>-u,-U&lt;列数&gt;或–unified=&lt;列数&gt; 　以合并的方式来显示文件内容的不同。<br>-b或–ignore-space-change 　不检查空格字符的不同。<br>-B或–ignore-blank-lines 　不检查空白行。<br>-c 　显示全部内文，并标出不同之处。 </p>
 </blockquote>
 </li>
-</ol>
-<ol>
 <li><p>grep ‘查找字符串’ filename<br>分析一行的信息，查找指定内容  </p>
 <blockquote>
 <p>-a ：将binary文件以text文件的方式查找数据<br>-c ：计算找到‘查找字符串’的次数<br>-i ：忽略大小写的区别，即把大小写视为相同<br>-v ：反向选择，即显示出没有‘查找字符串’内容的那一行<br>例：<br>grep ‘MANPATH’ /etc/man.config<br>ps | grep -i mysql </p>
