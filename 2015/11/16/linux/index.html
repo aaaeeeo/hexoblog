@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux常用命令整理 | LOSO&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linuxman [command]查看一个linux命令的说明文档  
+文件/目录修改
+cd  
+
+. 当前目录.. 上级目录
+
+
+ls  
+
+-l ：列出长数据串，包含文件的属性与权限数据等-a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来-d ：仅列出目录本身，而不是列出目录的文件数据-h ：将文件容量以较易读的方式（GB，kB等）列出来-R ：递归列出子目录
+
+
+cp [op">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令整理">
+<meta property="og:url" content="http://yoursite.com/2015/11/16/linux/index.html">
+<meta property="og:site_name" content="LOSO's blog">
+<meta property="og:description" content="Linuxman [command]查看一个linux命令的说明文档  
+文件/目录修改
+cd  
+
+. 当前目录.. 上级目录
+
+
+ls  
+
+-l ：列出长数据串，包含文件的属性与权限数据等-a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来-d ：仅列出目录本身，而不是列出目录的文件数据-h ：将文件容量以较易读的方式（GB，kB等）列出来-R ：递归列出子目录
+
+
+cp [op">
+<meta property="og:updated_time" content="2016-03-12T03:57:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令整理">
+<meta name="twitter:description" content="Linuxman [command]查看一个linux命令的说明文档  
+文件/目录修改
+cd  
+
+. 当前目录.. 上级目录
+
+
+ls  
+
+-l ：列出长数据串，包含文件的属性与权限数据等-a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来-d ：仅列出目录本身，而不是列出目录的文件数据-h ：将文件容量以较易读的方式（GB，kB等）列出来-R ：递归列出子目录
+
+
+cp [op">
+  
+    <link rel="alternative" href="/atom.xml" title="LOSO&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/p.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Zuoming Li</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/notes/">课堂笔记</a></li>
+				        
+							<li><a href="/categories/reading/">读书笔记</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/aaaeeeo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/aaaeeeo/" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-zuo-ming" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/nblzm/" title="douban">douban</a>
+					        
+								<a class="mail" target="_blank" href="mailto:lee.zuoming@gmail.com" title="mail">mail</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/zuoming.li" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/110199814197862196402" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/aaaeeeo" title="twitter">twitter</a>
+					        
+								<a class="hupu" target="_blank" href="http://my.hupu.com/aaaeeeo" title="hupu">hupu</a>
+					        
+								<a class="linkedin" target="_blank" href="https://www.linkedin.com/profile/view?id=AAIAABYigoABKuT00iyHJ_OOH4PvgESTDsfrwaY" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/15autumn/" style="font-size: 20px;">15autumn</a> <a href="/tags/51100/" style="font-size: 10px;">51100</a> <a href="/tags/55001/" style="font-size: 10px;">55001</a> <a href="/tags/africa/" style="font-size: 10px;">africa</a> <a href="/tags/english/" style="font-size: 20px;">english</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/整理/" style="font-size: 10px;">整理</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">route 172 university of chicago-kenwood to ellis-60th street</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Zuoming Li</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/p.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Zuoming Li</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/notes/">课堂笔记</a></li>
+		        
+					<li><a href="/categories/reading/">读书笔记</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/aaaeeeo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/aaaeeeo/" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-zuo-ming" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/nblzm/" title="douban">douban</a>
+			        
+						<a class="mail" target="_blank" href="mailto:lee.zuoming@gmail.com" title="mail">mail</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/zuoming.li" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/110199814197862196402" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/aaaeeeo" title="twitter">twitter</a>
+			        
+						<a class="hupu" target="_blank" href="http://my.hupu.com/aaaeeeo" title="hupu">hupu</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/profile/view?id=AAIAABYigoABKuT00iyHJ_OOH4PvgESTDsfrwaY" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/16/linux/" class="article-date">
+  	<time datetime="2015-11-17T03:00:00.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux常用命令整理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/整理/">整理</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux">Linux</h1><p>man [command]<br>查看一个linux命令的说明文档  </p>
+<h2 id="文件/目录修改">文件/目录修改</h2><ol>
+<li><p>cd  </p>
+<blockquote>
+<p>. 当前目录<br>.. 上级目录</p>
+</blockquote>
+</li>
+<li><p>ls  </p>
+<blockquote>
+<p>-l ：列出长数据串，包含文件的属性与权限数据等<br>-a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来<br>-d ：仅列出目录本身，而不是列出目录的文件数据<br>-h ：将文件容量以较易读的方式（GB，kB等）列出来<br>-R ：递归列出子目录</p>
+</blockquote>
+</li>
+<li><p>cp [options] source1 source2 source3 …. directory  </p>
+<blockquote>
+<p>-a ：将文件的特性一起复制<br>-p ：连同文件的属性一起复制，而非使用默认方式，与-a相似，常用于备份<br>-i ：若目标文件已经存在时，在覆盖时会先询问操作的进行<br>-r ：递归复制目录<br>-u ：目标文件与源文件有差异时才会复制  </p>
+</blockquote>
+</li>
+<li><p>mv [options] source1 source2 source3 …. directory  </p>
+<blockquote>
+<p>-f 强制 -i 询问<br>-u ：若目标文件已经存在，且比目标文件新，才会更新 </p>
+</blockquote>
+</li>
+<li><p>rm  </p>
+<blockquote>
+<p>-f 强制 -i 询问 -r 递归</p>
+</blockquote>
+</li>
+<li><p>touch<br>建立空文件，或者将某个文件访问时间修改为目前(mtime 与 atime) </p>
+<blockquote>
+<p>-t [YYMMDDhhmm] ：修改为指定时间</p>
+</blockquote>
+</li>
+<li><p>mkdir  </p>
+<blockquote>
+<p>-m ：设定目录权限<br>-p ：递归建立目录 （mkdir -p dir1/dir2） </p>
+</blockquote>
+</li>
+<li><p>tar<br>压缩/解压 </p>
+<blockquote>
+<p>-j ：通过bzip2的支持进行压缩/解压缩<br>-z ：通过gzip的支持进行压缩/解压缩 </p>
+<p>压缩：tar -zcv -f filename.tar.gz 要被处理的文件或目录名称<br>查询：tar -ztv -f filename.tar.gz<br>解压：tar -zxv -f filename.tar.gz -C 欲解压缩的目录   </p>
+</blockquote>
+</li>
+</ol>
+<h2 id="文件/信息查看">文件/信息查看</h2><ol>
+<li><p>cat tac（从最后一行开始显示）nl（有行号显示） </p>
+<blockquote>
+<p>-n ：打印出行号；<br>-T ：将 [tab] 按键以 ^I 显示出来；<br>-v ：列出一些看不出来的特殊字符   </p>
+</blockquote>
+</li>
+<li><p>head / tail  </p>
+<blockquote>
+<p>-n ：后面接数字，代表显示几行</p>
+</blockquote>
+</li>
+<li><p>less<br>分页显示，例： cat 1.cpp | less</p>
+<blockquote>
+<p>空格键 ：向下翻动一页；<br>b ： 向上翻动一页；<br>Enter： 向下翻一行<br>上/下键盘：上下翻动一行<br>/字符串 ：向下搜寻『字符串』的功能；<br>?字符串 ：向上搜寻『字符串』的功能；<br>n ：重复前一个搜寻 (与 / 或 ? 有关！)<br>N ：反向的重复前一个搜寻 (与 / 或 ? 有关！)<br>q ：离开 less 这个程序</p>
+</blockquote>
+</li>
+<li><p>stat<br>查看文件基本信息（大小、权限、日期等）</p>
+</li>
+<li><p>file<br>查看文件信息（类型、链接库等）</p>
+</li>
+<li><p>diff [文件或目录1] [文件或目录2]<br>以逐行的方式，比较文本文件的异同处。所是指定要比较目录，则diff会比较目录中相同文件名的文件</p>
+<blockquote>
+<p>-y或–side-by-side 　以并列的方式显示文件的异同之处<br>-u,-U&lt;列数&gt;或–unified=&lt;列数&gt; 　以合并的方式来显示文件内容的不同。<br>-b或–ignore-space-change 　不检查空格字符的不同。<br>-B或–ignore-blank-lines 　不检查空白行。<br>-c 　显示全部内文，并标出不同之处。 </p>
+</blockquote>
+</li>
+</ol>
+<ol>
+<li><p>grep ‘查找字符串’ filename<br>分析一行的信息，查找指定内容  </p>
+<blockquote>
+<p>-a ：将binary文件以text文件的方式查找数据<br>-c ：计算找到‘查找字符串’的次数<br>-i ：忽略大小写的区别，即把大小写视为相同<br>-v ：反向选择，即显示出没有‘查找字符串’内容的那一行<br>例：<br>grep ‘MANPATH’ /etc/man.config<br>ps | grep -i mysql </p>
+</blockquote>
+</li>
+<li><p>find [PATH] [option] [action]<br>find是一个基于查找的功能非常强大的命令  </p>
+<blockquote>
+<p>[PATH]: 查找路径<br>[option]: 查找内容<br>[action]: 对找到内容执行的动作，-print或 -exec ‘command’ {} \;<br>例：<br>find ./ -name file1 -print ,从当前目录向下查找名为 file1 的文件并打印出来<br>find ./ -size 0 -exec rm {} \; 删除文件大小为零的文件（还可以以这样做：rm -i `find ./ -size 0`  或 find ./ -size 0 | xargs rm -f &amp;）<br>find /root/py -mtime +10 -name “*.dmp” -exec cp {} /root/davetmp/  /;</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p>与时间有关的参数：<br>-mtime n : n为数字，意思为在n天之前的“一天内”被更改过的文件；<br>-mtime +n : 列出在n天之前（不含n天本身）被更改过的文件名；<br>-mtime -n : 列出在n天之内（含n天本身）被更改过的文件名；<br>-newer file : 列出比file还要新的文件名<br>例如：<br>find /root -mtime 0 #在当前目录下查找今天之内有改动的文件  </p>
+</li>
+<li><p>与用户或用户组名有关的参数：<br>-user name : 列出文件所有者为name的文件<br>-group name : 列出文件所属用户组为name的文件<br>-uid n : 列出文件所有者为用户ID为n的文件<br>-gid n : 列出文件所属用户组为用户组ID为n的文件<br>例如：<br>find /home/ljianhui -user ljianhui #在目录/home/ljianhui中找出所有者为ljianhui的文件  </p>
+</li>
+<li><p>与文件权限及名称有关的参数：<br>-name filename ：找出文件名为filename的文件<br>-size [+-]SIZE ：找出比SIZE还要大（+）或小（-）的文件<br>-tpye TYPE ：查找文件的类型为TYPE的文件，TYPE的值主要有：一般文件（f)、设备文件（b、c）、  </p>
+<pre><code>目录（<span class="keyword">d</span>）、连接文件（<span class="keyword">l</span>）、socket（s）、FIFO管道文件（p）；  
+</code></pre><p>-perm mode ：查找文件权限刚好等于mode的文件，mode用数字表示，如0755；<br>-perm -mode ：查找文件权限必须要全部包括mode权限的文件，mode用数字表示<br>-perm +mode ：查找文件权限包含任一mode的权限的文件，mode用数字表示<br>例如：<br>find / -name passwd # 查找文件名为passwd的文件<br>find . -perm 0755 # 查找当前目录中文件权限的0755的文件<br>find . -size +12k # 查找当前目录中大于12KB的文件，注意c表示byte  </p>
+</li>
+</ul>
+<h2 id="权限相关">权限相关</h2><ol>
+<li><p>chmod  </p>
+<blockquote>
+<p>-R 递归修改</p>
+<p>chmod 755 file #把file的文件权限改变为-rxwr-xr-x<br>755 =&gt; 对应8进制的 111 可读可写可执行</p>
+<p>chmod g+w file #向file的文件权限中加入用户组可写权限<br>u（user）、g（group）、o（other）、a（all）和+（加入）、-（删除）、=（设置）跟rwx搭配来对文件的权限进行更改。</p>
+</blockquote>
+</li>
+<li><p>chgrp<br>改变文件所属用户组</p>
+<blockquote>
+<p>chgrp users -R ./dir</p>
+</blockquote>
+</li>
+<li><p>chown<br>改变文件所有者  </p>
+</li>
+<li><p>umask<br>查看或更改当前默认权限</p>
+<blockquote>
+<p>umask 022</p>
+</blockquote>
+</li>
+<li><p>su<br>变更为其他使用者的身份  </p>
+<blockquote>
+<p>-l 或 –login 这个参数加了之后，就好像是重新 login 为该使用者一样<br>-m -p 或 –preserve-environment 执行 su 时不改变环境变数<br>例：<br>su root</p>
+</blockquote>
+</li>
+<li><p>sudo  </p>
+<blockquote>
+<p>-l 显示出自己（执行 sudo 的使用者）的权限<br>-u username/#uid 不加此参数，代表要以 root 的身份执行指令，而加了此参数，可以以 username 的身份执行指令（#uid 为该 username 的使用者号码） </p>
+</blockquote>
+</li>
+</ol>
+<h2 id="系统">系统</h2><ol>
+<li><p>which<br>查看command所在位置 例：which python</p>
+<blockquote>
+<p>-a ：将所有可以找到的指令均列出，而不止第一个被找到的指令名称 </p>
+</blockquote>
+</li>
+<li><p>top<br>任务管理器  </p>
+</li>
+<li><p>ps<br>查看进程  </p>
+<blockquote>
+<p>-A ：所有的进程均显示出来<br>-a ：不与terminal有关的所有进程<br>-u ：有效用户的相关进程<br>-x ：一般与a参数一起使用，可列出较完整的信息<br>-l ：较长，较详细地将PID的信息列出  </p>
+</blockquote>
+</li>
+<li><p>jobs / bg / fg  </p>
+<blockquote>
+<p>ctrl-c 发送 SIGINT 信号，终止一个进程<br>ctrl-z 发送 SIGSTOP信号，挂起一个进程<br>ctrl-d EOF，终止输入流</p>
+<p>jobs: 查看后台任务<br>bg: 后台运行任务<br>fg: 前台运行任务<br>bg %任务编号  默认第一个  </p>
+</blockquote>
+</li>
+<li><p>kill<br>向进程发送信号，默认SIGKILL强制中断信号  </p>
+<blockquote>
+<p>kill [-signal] PID或%jobnumber</p>
+</blockquote>
+</li>
+<li><p>who / finger<br>查看在线用户/用户信息</p>
+</li>
+<li><p>fdisk<br>列出存储设备</p>
+</li>
+</ol>
+<h2 id="SSH">SSH</h2><h2 id="GIT">GIT</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/16/51100-7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Advanced Programming Week 7
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/10/55001-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Algorithm Week 6</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_cqq"></a>
+	<a class="jiathis_button_email"></a>
+	<a class="jiathis_button_copy"></a>
+	<a href="http://www.jiathis.com/share?uid=2068360" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2068360" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="linux" data-title="Linux常用命令整理" data-url="http://yoursite.com/2015/11/16/linux/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"aaaeeeo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Zuoming Li
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
